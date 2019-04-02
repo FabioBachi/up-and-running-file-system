@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import { connect } from 'react-redux';
 import { toggleMenu } from '../../store/reducers/common';
 
-class Header extends React.Component {
+class Header extends Component {
     openMenu = () => {
         this.props.toggleMenu(true);
     }

@@ -3,6 +3,13 @@
 #files {
     flex-grow: 1;
 
+    .filesLoading {
+        color: $pink;
+        font-size: 15px;
+        padding-bottom: $gutter / 2;
+        padding-top: $gutter / 2;
+        text-align: center;
+    }
     .fileList {
         display: flex;
         flex-direction: row;
