@@ -5,6 +5,9 @@
     flex-shrink: 0;
     margin-right: $gutter;
 
+    .tagsClose {
+        display: none;
+    }
     .tagList {
         padding-left: $gutter / 2;
         padding-right: $gutter / 2;
@@ -25,6 +28,44 @@
                     color: $lightText;
                     font-size: 11px;
                 }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $mobileWidth) {
+    #tags {
+        border-radius: 0;
+        flex-basis: auto;
+        display: none;
+        left: 0;
+        height: 100vh;
+        margin-top: 0;
+        padding-top: 0;
+        position: fixed;
+        top: 0;
+        width: 300px;
+
+        &.menuOpen {
+            display: block;
+        }
+        .tagsClose {
+            padding: 10px;
+            display: block;
+
+            .fa {
+                color: $purple;
+                font-size: 20px;
+            }
+        }
+        .boxTitle {
+            border-top: 1px solid $borderGrey;
+            padding-top: $gutter / 2;
+        }
+        .tagList {
+            li {
+                padding-bottom: 5px;
+                padding-top: 5px;
             }
         }
     }

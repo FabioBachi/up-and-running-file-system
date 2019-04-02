@@ -12,6 +12,9 @@
     z-index: 1;
     width: 100%;
 
+    #menuTrigger {
+        display: none;
+    }
     .logo {
         text-align: right;
 
@@ -32,5 +35,18 @@
     .github {
         color: $white;
         font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: $mobileWidth) {
+    #header {
+        #menuTrigger {
+            display: block;
+
+            .fa {
+                color: $white;
+                font-size: 20px;
+            }
+        }
     }
 }

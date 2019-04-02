@@ -32,6 +32,7 @@
             .fileButton {
                 background-color: $purple;
                 border-radius: 18px;
+                flex-shrink: 0;
                 height: 25px;
                 line-height: 25px;
                 text-align: center;
@@ -45,6 +46,25 @@
                     color: white;
                     font-size: 15px;
                 }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    #files {
+        .fileList {
+            li {
+                flex-basis: calc(50% - (#{$gutter} / 2));
+            }
+        }
+    }
+}
+@media only screen and (max-width: 450px) {
+    #files {
+        .fileList {
+            li {
+                flex-basis: 100%;
             }
         }
     }
