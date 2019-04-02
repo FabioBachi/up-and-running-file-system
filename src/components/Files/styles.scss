@@ -1,0 +1,51 @@
+@import './variables';
+
+#files {
+    flex-grow: 1;
+
+    .fileList {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-left: $gutter / 2;
+        padding-right: $gutter / 2;
+
+        li {
+            align-items: center;
+            border-radius: 5px;
+            border-top: 3px solid $purple;
+            box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+            display: flex;
+            flex: 0 0;
+            flex-basis: calc(25% - (#{$gutter} / 2));
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            margin-bottom: $gutter / 2;
+            padding: $gutter / 2;
+
+            .fileName {
+                flex-grow: 1;
+                font-size: 13px;
+                padding-right: $gutter / 2;
+            }
+            .fileButton {
+                background-color: $purple;
+                border-radius: 18px;
+                height: 25px;
+                line-height: 25px;
+                text-align: center;
+                transition: background-color .2s;
+                width: 25px;
+
+                &:hover {
+                    background-color: $pink;
+                }
+                .fa {
+                    color: white;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}

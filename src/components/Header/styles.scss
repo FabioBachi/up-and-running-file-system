@@ -1,0 +1,36 @@
+@import './variables';
+
+#header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $gutter;
+    max-width: $maxWidth;
+    padding: $gutter;
+    padding-top: $gutter;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+
+    .logo {
+        text-align: right;
+
+        h1 {
+            color: $white;
+            font-size: 25px;
+            line-height: 10px;
+
+        }
+        span {
+            color: $white;
+            display: block;
+            font-size: 15px;
+            font-weight: normal;
+            line-height: 10px;
+        }
+    }
+    .github {
+        color: $white;
+        font-size: 20px;
+    }
+}

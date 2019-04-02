@@ -1,0 +1,31 @@
+@import './variables';
+
+#tags {
+    flex-basis: 200px;
+    flex-shrink: 0;
+    margin-right: $gutter;
+
+    .tagList {
+        padding-left: $gutter / 2;
+        padding-right: $gutter / 2;
+
+        li {
+            margin-bottom: 5px;
+
+            &.on {
+                a {
+                    color: $pink;
+                }
+            }
+            a {
+                color: $text;
+                font-size: 15px;
+
+                span {
+                    color: $lightText;
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}
