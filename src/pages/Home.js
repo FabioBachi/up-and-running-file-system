@@ -1,8 +1,8 @@
 import React from 'react';
-import { Files, Header, Tags } from './components';
-import './styles/App.scss';
+import { Files, Header, Tags } from './../components';
+import './../styles/App.scss';
 
-const App = () => (
+const Home = () => (
     <div className="App">
         <Header />
         <div className="wrapper">
@@ -14,4 +14,4 @@ const App = () => (
     </div>
 );
 
-export default App;
+export default Home;

@@ -16,7 +16,7 @@ class Header extends Component {
                     <h1>Up and Running</h1>
                     <span>File System</span>
                 </div>
-                <a href="/" target="_blank"><FontAwesome name="github" className="github" /></a>
+                <a href="https://github.com/fbachi/up-and-running-file-system" target="_blank"><FontAwesome name="github" className="github" /></a>
             </header>
         );
     }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 import { toggleMenu } from '../../store/reducers/common';
 import { getTags } from '../../store/reducers/files';
 
@@ -22,7 +23,7 @@ class Tags extends Component {
                 <header className="boxTitle"><FontAwesome name="tags" /> Tags</header>
                 <ul className="tagList">
                     {tags.map((el, i) =>
-                        <li key={i}><a href="/">{el.tag} <span>({el.files})</span></a></li>
+                        <li key={i}><Link to={`/?tag=${el.tag}`}>{el.tag} <span>({el.files})</span></Link></li>
                     )}
                 </ul>
                 { loading && <div className="filesLoading"><FontAwesome name="refresh" spin /></div> }

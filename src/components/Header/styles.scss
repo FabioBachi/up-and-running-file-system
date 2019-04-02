@@ -41,6 +41,9 @@
 @media only screen and (max-width: $mobileWidth) {
     #header {
         #menuTrigger {
+            background-color: transparent;
+            border: 0;
+            cursor: pointer;
             display: block;
 
             .fa {

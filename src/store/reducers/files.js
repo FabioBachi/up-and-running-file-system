@@ -1,4 +1,5 @@
 import qs from 'qs';
+import { stat } from 'fs';
 
 // Action Types
 
@@ -27,7 +28,7 @@ export default function reducer(state = initialState, action) {
             return {
                 ...state,
                 loading: false,
-                files: action.payload.data.files,
+                files: action.payload.config.reduxSourceAction.payload.params.page === 1 ? action.payload.data.files : [...stat.files, ...action.payload.data.files],
                 total: action.payload.data.total_files
             };
         case GET_FILES_FAIL:
@@ -52,12 +53,11 @@ export default function reducer(state = initialState, action) {
 
 // Action Creators
 
-export function getFiles(page = 1) {
-    const data = { page };
-
+export function getFiles(data) {
     return {
         type: GET_FILES,
         payload: {
+            params: data,
             request: {
                 url: `/files?${qs.stringify(data)}`,
             }

@@ -2,10 +2,31 @@ import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import { connect } from 'react-redux';
 import { getFiles } from '../../store/reducers/files';
+import { withRouter } from "react-router-dom";
+import qs from 'qs';
 
 class Files extends Component {
     componentDidMount (){
-        this.props.getFiles();
+        this.getFiles();
+    }
+
+    componentDidUpdate (prevProps){
+        if (this.props.location.pathname !== prevProps.location.pathname || this.props.location.search !== prevProps.location.search){
+            this.getFiles();
+        }
+    }
+
+    getFiles = () => {
+        let search = this.props.location.search;
+        const searchParams = qs.parse(search.replace(/\?/g, ''))
+
+        const params = {
+            page: searchParams.page || 1,
+            tag: searchParams.tag || null,
+        };
+
+        this.props.getFiles(params);
+
     }
 
     render (){
@@ -37,4 +58,6 @@ const mapDispatchToProps = {
     getFiles
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Files);
+const FilesRouted = withRouter(Files);
+
+export default connect(mapStateToProps, mapDispatchToProps)(FilesRouted);

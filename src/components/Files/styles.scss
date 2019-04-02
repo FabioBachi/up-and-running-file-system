@@ -14,9 +14,7 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-between;
-        padding-left: $gutter / 2;
-        padding-right: $gutter / 2;
+        justify-content: flex-start;
 
         li {
             align-items: center;
@@ -25,10 +23,12 @@
             box-shadow: 0 0 3px rgba(0, 0, 0, .2);
             display: flex;
             flex: 0 0;
-            flex-basis: calc(25% - (#{$gutter} / 2));
+            flex-basis: calc(25% - #{$gutter});
             flex-wrap: nowrap;
             justify-content: space-between;
             margin-bottom: $gutter / 2;
+            margin-left: $gutter / 2;
+            margin-right: $gutter / 2;
             padding: $gutter / 2;
 
             .fileName {
@@ -62,7 +62,7 @@
     #files {
         .fileList {
             li {
-                flex-basis: calc(50% - (#{$gutter} / 2));
+                flex-basis: calc(50% - #{$gutter});
             }
         }
     }
@@ -71,7 +71,7 @@
     #files {
         .fileList {
             li {
-                flex-basis: 100%;
+                flex-basis: calc(100% - #{$gutter});
             }
         }
     }
