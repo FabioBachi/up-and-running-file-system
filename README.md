@@ -1,10 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project created by Fábio Bachi for testing purposes for Up and Running Software.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+Please, first clone this repo: https://github.com/fbachi/up-and-running-file-system.git
+Then run `npm i` and then `npm start`
 
-### `npm start`
+## Accessing
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Available on Heroku:
+
+## Development
+
+I took between 4-6 hours to develop this project. I "designed" the UI myself while coding. Just after assuming that the UI was good enough I moved to integrating it with the API.
