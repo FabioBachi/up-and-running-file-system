@@ -17,6 +17,9 @@ class RenameForm extends Component {
         e.preventDefault();
         const { filename } = this.state;
 
+        if (this.props.loading)
+            return;
+
         if (!filename.trim()){
             notify.show('Please inform the desired filename.', 'error');
         } else {

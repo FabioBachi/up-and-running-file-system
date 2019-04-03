@@ -6,12 +6,13 @@ form {
     .field {
         color: $purple;
         display: block;
-        font-size: 11px;
+        font-size: 13px;
     }
     .input {
         border: 0;
         border-bottom: 2px solid $purple;
         color: $pink;
+        font-size: 16px;
         font-weight: bold;
         outline: none;
         padding: 5px;
@@ -39,6 +40,7 @@ form {
         font-size: 12px;
         font-weight: bold;
         margin-top: 10px;
+        padding: 10px 0;
     }
     .filesLoading {
         color: $pink;

@@ -55,8 +55,10 @@ class Files extends Component {
                 <ul className="fileList">
                     {files.map((el, i) =>
                         <li key={el.id}>
-                            <div className="fileName">{el.name}</div>
-                            <Link to={`/rename/${el.id}?filename=${el.name}`} className="fileButton"><FontAwesome name="pencil" /></Link>
+                            <Link to={`/rename/${el.id}?filename=${el.name}`} className="fileWrapper">
+                                <div className="fileName">{el.name}</div>
+                                <div className="fileButton"><FontAwesome name="pencil" /></div>
+                            </Link>
                         </li>
                     )}
                 </ul>
