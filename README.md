@@ -3,6 +3,7 @@ Project created by Fábio Bachi for testing purposes for Up and Running Software
 ## Installation
 
 Please, first clone this repo: https://github.com/fbachi/up-and-running-file-system.git
+
 Then run `npm i` and then `npm start`
 
 ## Accessing
