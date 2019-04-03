@@ -1,0 +1,23 @@
+@import './variables';
+
+#pagination {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: $gutter;
+
+    .page {
+        background: transparent;
+        border: 0;
+        color: $purple;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: bold;
+        margin-left: $gutter / 2;
+        margin-right: $gutter / 2;
+
+        &.on {
+            color: $pink;
+        }
+    }
+}

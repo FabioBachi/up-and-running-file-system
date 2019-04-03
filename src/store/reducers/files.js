@@ -1,5 +1,4 @@
 import qs from 'qs';
-import { stat } from 'fs';
 
 // Action Types
 
@@ -14,6 +13,8 @@ export const GET_TAGS_FAIL = 'bachi/files/GET_TAGS_FAIL';
 // Reducer
 
 const initialState = {
+    currentPage: 1,
+    currentTag: null,
     files: [],
     loading: true,
     tags: [],
@@ -23,16 +24,20 @@ const initialState = {
 export default function reducer(state = initialState, action) {
     switch (action.type) {
         case GET_FILES:
-            return { ...state, loading: true };
+            return {
+                ...state,
+                loading: true,
+                files: []
+            };
         case GET_FILES_SUCCESS:
             return {
                 ...state,
                 loading: false,
-                files: action.payload.config.reduxSourceAction.payload.params.page === 1 ? action.payload.data.files : [...stat.files, ...action.payload.data.files],
+                files: action.payload.data.files,
                 total: action.payload.data.total_files
             };
         case GET_FILES_FAIL:
-            return { ...state, loading: false, files: [], error: 'We found a problem while trying to fetch data.' };
+            return { ...state, loading: false, files: [], error: 'We found a problem while fetching data.' };
 
         case GET_TAGS:
             return { ...state, loading: true };
@@ -43,7 +48,7 @@ export default function reducer(state = initialState, action) {
                 tags: action.payload.data,
             };
         case GET_TAGS_FAIL:
-            return { ...state, loading: false, files: [], error: 'We found a problem while trying to fetch data.' };
+            return { ...state, loading: false, files: [], error: 'We found a problem while fetching data.' };
 
 
         default:
