@@ -1,0 +1,48 @@
+@import './variables';
+
+form {
+    padding-top: $gutter;
+
+    .field {
+        color: $purple;
+        display: block;
+        font-size: 11px;
+    }
+    .input {
+        border: 0;
+        border-bottom: 2px solid $purple;
+        color: $pink;
+        font-weight: bold;
+        outline: none;
+        padding: 5px;
+        text-align: center;
+    }
+    .submit {
+        background-color: $pink;
+        border: 0;
+        border-radius: 40px;
+        color: $white;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: $gutter;
+        padding: $gutter / 2;
+        transition: background-color .2s;
+
+        &:hover {
+            background-color: $purple;
+        }
+    }
+    .backButton {
+        cursor: pointer;
+        color: $purple;
+        font-size: 12px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    .filesLoading {
+        color: $pink;
+        font-size: 15px;
+        margin-top: 30px;
+    }
+}

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import qs from 'qs';
 import FontAwesome from 'react-fontawesome';
 import { connect } from 'react-redux';
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { getFiles } from '../../store/reducers/files';
 import { toggleMenu } from '../../store/reducers/common';
 import { Pagination } from "./../";
@@ -56,7 +56,7 @@ class Files extends Component {
                     {files.map((el, i) =>
                         <li key={el.id}>
                             <div className="fileName">{el.name}</div>
-                            <a href="/" className="fileButton"><FontAwesome name="pencil" /></a>
+                            <Link to={`/rename/${el.id}?filename=${el.name}`} className="fileButton"><FontAwesome name="pencil" /></Link>
                         </li>
                     )}
                 </ul>

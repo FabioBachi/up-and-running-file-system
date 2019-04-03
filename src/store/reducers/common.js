@@ -11,7 +11,6 @@ const initialState = {
 export default function reducer(state = initialState, action) {
     switch (action.type) {
         case TOGGLE_MENU:
-            console.log(action.payload.menuOpen);
             return { ...state, menuOpen: action.payload.menuOpen };
         default:
             return state;

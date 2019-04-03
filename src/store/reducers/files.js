@@ -10,6 +10,10 @@ export const GET_TAGS = 'bachi/files/GET_TAGS';
 export const GET_TAGS_SUCCESS = 'bachi/files/GET_TAGS_SUCCESS';
 export const GET_TAGS_FAIL = 'bachi/files/GET_TAGS_FAIL';
 
+export const RENAME = 'bachi/files/RENAME';
+export const RENAME_SUCCESS = 'bachi/files/RENAME_SUCCESS';
+export const RENAME_FAIL = 'bachi/files/RENAME_FAIL';
+
 // Reducer
 
 const initialState = {
@@ -17,6 +21,8 @@ const initialState = {
     currentTag: null,
     files: [],
     loading: true,
+    loadingRename: false,
+    renamingMessage: null,
     tags: [],
     total: 0
 };
@@ -50,6 +56,16 @@ export default function reducer(state = initialState, action) {
         case GET_TAGS_FAIL:
             return { ...state, loading: false, files: [], error: 'We found a problem while fetching data.' };
 
+        case RENAME:
+            return { ...state, loadingRename: true };
+        case RENAME_SUCCESS:
+            return {
+                ...state,
+                loadingRename: false,
+                renamingMessage: action.payload.data.message
+            };
+        case RENAME_FAIL:
+            return { ...state, loadingRename: false, files: [], error: 'We found a problem while fetching data.' };
 
         default:
           return state;
@@ -76,6 +92,19 @@ export function getTags() {
         payload: {
             request: {
                 url: `/tags`,
+            }
+        }
+    };
+}
+
+export function rename(id, filename) {
+    return {
+        type: RENAME,
+        payload: {
+            request: {
+                url: `/file/${id}/rename`,
+                method: 'post',
+                data: qs.stringify({ filename })
             }
         }
     };

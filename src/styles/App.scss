@@ -2,6 +2,7 @@
 @import './../components/Files/styles.scss';
 @import './../components/Header/styles.scss';
 @import './../components/Pagination/styles.scss';
+@import './../components/RenameForm/styles.scss';
 @import './../components/Tags/styles.scss';
 
 * {
@@ -56,6 +57,19 @@ body {
         padding-top: $gutter / 2;
         margin-top: -61px;
 
+        &.renameBox {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            max-width: 320px - ($gutter * 2);
+            text-align: center;
+            width: 100%;
+
+            .boxTitle {
+                width: 100%;
+            }
+        }
         .boxTitle {
             border-bottom: 1px solid $borderGrey;
             color: $text;
